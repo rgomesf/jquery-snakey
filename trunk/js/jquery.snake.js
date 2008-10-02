@@ -186,7 +186,6 @@ var Snake = {
 			Snake.gameOver();
 
 		// check if cherries eaten match total: finished level.. advance to next level
-		// TODO: Should not be using Snake.score : need a variable to hold cherries eaten!!!!!!!!!
 		(Snake.cherriesEaten == Level[Snake.level][0].cherries) &&
 			Snake.advanceLevel();
 

@@ -20,6 +20,7 @@ var Snake = {
 
 		// append cherry to map
 		Snake.$cherry = $('<div id="cherry"></div>').appendTo(Snake.$map);
+	
 
 		// listen for key press, store keycode
 		Snake.cache.keyCode = [0,0];
@@ -32,8 +33,9 @@ var Snake = {
 				case 37 : 					
 				case 38 : 
 				case 39 : 
-				case 40 : 
-					e.preventDefault(); 
+				case 40 :
+					// preventing default event behaviour causes issues with IE; need to research further!
+					!$.browser.msie && e.preventDefault(); 
 					Snake.cache.keyCode[0] = Snake.cache.keyCode[1]; 
 					Snake.cache.keyCode[1] = keycode;					
 					break;
@@ -183,7 +185,7 @@ var Snake = {
 
 		// reposition snake segments on map
 		for(var i=0;i<Snake.seg.length;i++) {
-			Snake.seg[i].css({top:Snake.seg[i].top+"px",left:Snake.seg[i].left+"px"});
+			Snake.seg[i].css({top:Snake.seg[i].top+"px",left:Snake.seg[i].left+"px",display:"block"});
 		}						
 	},
 			

@@ -7,7 +7,7 @@
 
 var Snake = {
 		
-	$map : {}, $cherry : {}, seg : {}, wallseg : {}, cache : {},		
+	$map : {}, $cherry : {}, $overlay : {}, seg : {}, wallseg : {}, cache : {},		
 	animateTimer : 0, score : 0, grid : 0, level : 1, lives : 3, speed : 0, cherriesEaten : 0,
 	wall : 0, // are the outer map walls an obsticle?
 
@@ -17,11 +17,14 @@ var Snake = {
 		Snake.$map = $("#map1");
 		Snake.$map.width = Snake.$map.innerWidth();
 		Snake.$map.height = Snake.$map.innerHeight();
+		
+		// build and prepend overlay to map
+		Snake.$overlay = $('<div id="overlay"></div>').hide();
+		Snake.$map.prepend(Snake.$overlay);
 
-		// append cherry to map
+		// build and append cherry to map
 		Snake.$cherry = $('<div id="cherry"></div>').appendTo(Snake.$map);
 	
-
 		// listen for key press, store keycode
 		Snake.cache.keyCode = [0,0];
 		document.onkeydown = function(e){
@@ -34,7 +37,8 @@ var Snake = {
 				case 38 : 
 				case 39 : 
 				case 40 :
-					// preventing default event behaviour causes issues with IE; need to research further!
+					// preventing default event behaviour causes issues with IE; 
+					// need to research further!
 					!$.browser.msie && e.preventDefault(); 
 					Snake.cache.keyCode[0] = Snake.cache.keyCode[1]; 
 					Snake.cache.keyCode[1] = keycode;					
@@ -79,6 +83,7 @@ var Snake = {
 		// hide the cherry
 		Snake.$cherry.hide();
 
+
 		// update map message	
 		$("#map-msg").hide().html("Level "+Snake.level+"<small><br/>Eat <strong>"+Level[Snake.level][0].cherries+"</strong> cherries</small>").fadeIn();
 
@@ -86,6 +91,9 @@ var Snake = {
 
 			// hide map message
 			$("#map-msg").fadeOut(500, function(){
+
+				// hide overlay
+				Snake.$overlay.hide();
 
 				// reset and generate wall
 				Snake.wallseg = {};
@@ -247,10 +255,12 @@ var Snake = {
 	pause : function(){
 		if (Snake.animateTimer == 0) {
 			Snake.start();
+			Snake.$overlay.hide();
 			$("#map-msg").fadeOut();
 		} else {
 			clearInterval(Snake.animateTimer);
 			Snake.animateTimer = 0;
+			Snake.$overlay.show();
 			$("#map-msg").html("Paused").fadeIn();
 		}
 	},

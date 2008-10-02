@@ -28,6 +28,9 @@ var Snake = {
 		// listen for key press, store keycode
 		Snake.cache.keyCode = [0,0];
 		document.onkeydown = function(e){
+			// preventing default event behaviour causes issues with IE; 
+			// need to research further!
+			!$.browser.msie && e.preventDefault(); 
 			keycode = (e == null) ? event.keyCode : e.which;
 			switch(keycode) {					
 				case 71 : Snake.toggleGrid(); break;
@@ -37,9 +40,6 @@ var Snake = {
 				case 38 : 
 				case 39 : 
 				case 40 :
-					// preventing default event behaviour causes issues with IE; 
-					// need to research further!
-					!$.browser.msie && e.preventDefault(); 
 					Snake.cache.keyCode[0] = Snake.cache.keyCode[1]; 
 					Snake.cache.keyCode[1] = keycode;					
 					break;

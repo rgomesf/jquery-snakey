@@ -83,7 +83,6 @@ var Snake = {
 		// hide the cherry
 		Snake.$cherry.hide();
 
-
 		// update map message	
 		$("#map-msg").hide().html("Level "+Snake.level+"<small><br/>Eat <strong>"+Level[Snake.level][0].cherries+"</strong> cherries</small>").fadeIn();
 

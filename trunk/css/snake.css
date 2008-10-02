@@ -28,6 +28,14 @@
 	border:1px solid #aaa;
 	overflow:hidden;
 }
+#overlay {
+	position:absolute;
+	width:400px;
+	height:400px;
+	background:#fff;
+	z-index:100;
+	opacity:0.5;
+}
 #stats { 
 	width:402px;
 	background:url(../img/snake/stats_bg.jpg) repeat-x left top;
@@ -38,7 +46,7 @@
 	width:100%;
 	display:block;
 	font-size:200%;
-	z-index:100;
+	z-index:101;
 	text-align:center;
 }
 .snake {
@@ -74,6 +82,9 @@
 	font-weight:normal;
 	padding:4px;
 	border:1px solid #ccc;
+}
+#start-game {
+	outline:none;
 }
 
 .right {float:right}

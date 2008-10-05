@@ -1,7 +1,8 @@
 /*
  *
- * jquery.snake.js
- * (c) Richard Willis
+ * jquery.snake.js - a nibbles clone
+ * Copyright (c) 2008 Richard Willis
+ * MIT license : http://www.opensource.org/licenses/mit-license.php
  *
  */
 

@@ -19,8 +19,7 @@ var Snake = {
 		Snake.$map.height = Snake.$map.innerHeight();
 		
 		// build and prepend overlay to map
-		Snake.$overlay = $('<div id="overlay"></div>').hide();
-		Snake.$map.prepend(Snake.$overlay);
+		Snake.$overlay = $('<div id="overlay"></div>').hide().prependTo(Snake.$map);
 
 		// build and append cherry to map
 		Snake.$cherry = $('<div id="cherry"></div>').appendTo(Snake.$map);
@@ -64,6 +63,7 @@ var Snake = {
 
 		// reset score
 		Snake.score = reset ? 0 : Snake.score;
+		$("#stats-score").html(Snake.score+"");
 
 		// reset level
 		Snake.level = reset ? 1 : Snake.level;
@@ -241,10 +241,10 @@ var Snake = {
 	toggleGrid : function(){
 		var background;
 		if (!Snake.grid) {
-			background = "url(/img/snake/grid_bg.gif)";
+			background = "transparent url(/img/snake/grid_bg.gif)";
 			Snake.grid = 1;
 		} else {
-			background = "none";
+			background = "transparent";
 			Snake.grid = 0;
 		}
 		Snake.$map.css({background:background});
@@ -291,9 +291,8 @@ var Snake = {
 				left:Snake.Cherry.left+"px",
 				top:Snake.Cherry.top+"px"
 			});
-			show == undefined && Snake.$cherry.fadeIn();
+			show == undefined && Snake.$cherry.hide().fadeIn();
 		}
-
 	},
 
 	// wall obstacles
@@ -318,7 +317,6 @@ var Snake = {
 				}
 			}
 		}
-
 	},
 
 	// check for an object in an object collection

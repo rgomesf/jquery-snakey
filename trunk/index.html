@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>jQuery Snake</title>
+	<title>jQuery Snakey</title>
+	<!--<base href="http://jquery-snakey.googlecode.com/svn/trunk/" />-->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/jq.css" /> 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/tabs.css" /> 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/snake.css" /> 
@@ -27,6 +28,24 @@
 			});
 			$("a#source-exp").click(function(){
 				$(".source").slideToggle();
+			});
+			$("a#scores-exp").click(function(){
+				return;
+				// get the high scores
+				$.ajax({
+					type : "GET",
+					url : "snakey-scores.php",
+					data : "view=10",
+					dataType : "json",
+					success : function(data){
+						eval(data);
+						var $scores = $("<ul></ul>").css("marginTop", "0px");
+						for(var i in data) {
+                                	        	$scores.append("<li>"+data[i]+"</li>");
+						}
+                                		$("#high-scores").empty().append($scores).slideToggle();
+        		                }
+				});
 			});
 		});
 	</script>	
@@ -63,8 +82,12 @@
 					<li>G : Toggle Grid</li>			
 				</ul>
 				
+				<h2>High Scores <a id="scores-exp" href="javascript:;">[+]</a></h2>
+				<div id="high-scores" class="scores hidden">&nbsp;</div>
+
+				
 				<h2>Bugs &amp; Todo <a id="bugs-exp" href="javascript:;">[+]</a></h2>
-				<ul class="bugs hidden">
+				<ul class="bugs hidden" style="margin-top:0px">
 					<li><strike>TODO: Make snake grow in length</strike></li>
 					<li><strike>TODO: Introduce levels</strike></li>
 					<li><strike>TODO: Introduce wall obstacles</strike></li>
@@ -77,14 +100,14 @@
 				</ul>
 
 				<h2>Source <a id="source-exp" href="javascript:;">[+]</a></h2>
-				<ul class="source hidden">
+				<ul class="source hidden" style="margin-top:0px">
 					<li>
 						<a href="http://jquery-snakey.googlecode.com/svn/trunk/js/jquery.snake.js">jquery.snake.js</a> 
 						(Uncompressed &amp; commented)
 					</li>
 				</ul>
 
-				<p>Test on FF2; FF3; Opera 9.52; IE6</p>
+				<p>Test on FF2; FF3; Opera 9; Safari 3; IE6; IE7; IE8; Chrome</p>
 
 				</div>
 			</div>		
@@ -114,6 +137,18 @@
 				</div>	
 			</div>
 		</div>
-	</div> 
+	</div>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var siteTracker = _gat._getTracker("UA-18071-1");
+		siteTracker._initData();
+		siteTracker._trackPageview();
+		var projectTracker = _gat._getTracker("UA-1636725-10");
+		projectTracker._initData();
+		projectTracker._trackPageview();
+	</script>
 </body>
 </html>

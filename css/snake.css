@@ -37,7 +37,8 @@
 	opacity:0.5;
 }
 #stats { 
-	width:402px;
+	width:392px;
+	padding:1px 5px 0px 5px;
 	background:url(../img/snake/stats_bg.jpg) repeat-x left top;
 }
 #map-msg {
@@ -86,7 +87,86 @@
 #start-game {
 	outline:none;
 }
+.scores {
+	height:140px;
+	border:1px solid #ddd;
+	width:360px;
+}
+.scores .col1 {
+	width:8%;
+	display:block;
+	padding:0px 8px;
+	float:left;
+}
+.scores .col2 {
+	width:13%;
+	display:block;
+	padding:0px 8px;
+	float:left;
+	border-left:1px solid #fff;
+}
+.scores .col3 {
+	width:61%;
+	display:block;
+	padding:0px 8px;
+	float:left;
+	border-left:1px solid #fff;
+}
 
+.scores .head {
+	display:block;
+	padding:2px 0px;
+	font-weight:bold;
+	background:url(../img/snake/score_head_bg.jpg) repeat-x left bottom;
+	border-bottom:1px solid #ccc;
+}
+
+.head .col1, .head .col2 {}
+
+.head .col2 {
+	border-left:1px solid #bbb;
+}
+.head .col3 {
+	border-left:1px solid #bbb;
+}
+
+.scores .row {
+	display:block;
+	border-bottom:1px solid #eee;
+	padding:2px 0px
+}
+
+.browser-icons a, .browser-icons a:visited {
+	display:block;
+	float:left;
+	width:24px;
+	height:20px;
+	overflow:hidden;
+	white-space:nowrap;
+	margin-right:4px;
+	text-decoration:none;
+	border:1px solid #ccc;
+	border-right:1px solid #999;		
+	border-bottom:1px solid #999;		
+	background:transparent url(../img/snake/browser_icons_bg.jpg) no-repeat center top;
+	opacity:0.4;
+}
+.browser-icons a:hover {
+	opacity:1;
+}
+a.explorer, a.explorer:visited {
+	background-position:center -19px;
+}
+a.safari, a.safari:visited {
+	background-position:center -40px;
+}
+a.opera, a.opera:visited {
+	background-position:center -60px;
+}
+a.chrome, a.chrome:visited {
+	background-position:center -80px;
+}
+	
 .right {float:right}
 .error {color:red}
 .hidden {display:none}

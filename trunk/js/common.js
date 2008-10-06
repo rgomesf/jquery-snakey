@@ -25,7 +25,7 @@ $(function(){
 		$(".source").slideToggle();
 	});
 	$("a#scores-exp").click(function(){
-		//return;
+		return;
 		// get the high scores
 		$.ajax({
 			type : "GET",

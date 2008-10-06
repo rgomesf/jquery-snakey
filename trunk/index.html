@@ -9,46 +9,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="/js/jquery.js"></script>-->
 	<script type="text/javascript" src="js/jquery.snake.js"></script> 
-	<script type="text/javascript">
-		$(function(){
-			// FF2/Mac Opacity Bug
-			($.browser.mozilla && parseFloat($.browser.version) < 1.9 && navigator.appVersion.indexOf('Mac') !== -1) && $('body').css('-moz-opacity',.999);
-			
-			// setup the game
-			Snake.setup();
-			
-			$("a#start-game").click(function(e){
-				e.preventDefault();
-				// start the game
-				Snake.newGame();
-			});
-			
-			$("a#bugs-exp").click(function(){
-				$(".bugs").slideToggle();
-			});
-			$("a#source-exp").click(function(){
-				$(".source").slideToggle();
-			});
-			$("a#scores-exp").click(function(){
-				return;
-				// get the high scores
-				$.ajax({
-					type : "GET",
-					url : "snakey-scores.php",
-					data : "view=10",
-					dataType : "json",
-					success : function(data){
-						eval(data);
-						var $scores = $("<ul></ul>").css("marginTop", "0px");
-						for(var i in data) {
-                                	        	$scores.append("<li>"+data[i]+"</li>");
-						}
-                                		$("#high-scores").empty().append($scores).slideToggle();
-        		                }
-				});
-			});
-		});
-	</script>	
+	<script type="text/javascript" src="js/common.js"></script>
 </head>
 <body>
 	<div>
@@ -83,8 +44,19 @@
 				</ul>
 				
 				<h2>High Scores <a id="scores-exp" href="javascript:;">[+]</a></h2>
-				<div id="high-scores" class="scores hidden">&nbsp;</div>
-
+				<div id="high-scores" class="scores hidden">
+					<span class="head">
+						<span class="col1">
+							Pos.
+						</span>
+						<span class="col2">
+							Score
+						</span>
+						<span class="col3">
+							Name
+						</span>&nbsp;
+					</span>
+				</div>
 				
 				<h2>Bugs &amp; Todo <a id="bugs-exp" href="javascript:;">[+]</a></h2>
 				<ul class="bugs hidden" style="margin-top:0px">
@@ -107,8 +79,14 @@
 					</li>
 				</ul>
 
-				<p>Test on FF2; FF3; Opera 9; Safari 3; IE6; IE7; IE8; Chrome</p>
+				<p>Tested on:</p>
 
+				<p class="browser-icons">
+					<a class="firefox" title="Firefox 2 &amp; 3" href="http://firefox.com">&nbsp;</a>
+					<a class="explorer" title="Explorer 6, 7 &amp; 8" href="http://www.microsoft.com">&nbsp;</a>
+					<a class="safari" title="Safari 3" href="http://www.safari.com">&nbsp;</a>
+					<a class="opera" title="Opera 9" href="http://www.opera.com">&nbsp;</a>
+					<a class="chrome" title="Chrome" href="http://www.chrome.com">&nbsp;</a>
 				</div>
 			</div>		
 			
@@ -138,17 +116,5 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-		var siteTracker = _gat._getTracker("UA-18071-1");
-		siteTracker._initData();
-		siteTracker._trackPageview();
-		var projectTracker = _gat._getTracker("UA-1636725-10");
-		projectTracker._initData();
-		projectTracker._trackPageview();
-	</script>
 </body>
 </html>

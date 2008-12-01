@@ -242,7 +242,7 @@ var Snake = {
 	toggleGrid : function(){
 		var background;
 		if (!Snake.grid) {
-			background = "transparent url(/img/snake/grid_bg.gif)";
+			background = "transparent url(img/snake/grid_bg.gif)";
 			Snake.grid = 1;
 		} else {
 			background = "transparent";

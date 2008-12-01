@@ -2,7 +2,12 @@
  *
  * jquery.snake.js - a nibbles clone
  * Copyright (c) 2008 Richard Willis
- * MIT license : http://www.opensource.org/licenses/mit-license.php
+ * MIT license 	: http://www.opensource.org/licenses/mit-license.php
+ *
+ * vi/terminal/ubuntu/firefox/firebug
+ * http://jquery-snakey.googlecode.com/
+ * willis.rh@gmail.com
+ *
  *
  */
 
@@ -131,11 +136,13 @@ var Snake = {
 
 		var keycode = Snake.cache.keyCode;
 		if (
+			// if key pressed is opposite of current direction
 			keycode[0] == 37 && keycode[1] == 39 || 
 			keycode[0] == 39 && keycode[1] == 37 || 
 			keycode[0] == 38 && keycode[1] == 40 || 
 			keycode[0] == 40 && keycode[1] == 38
 		) {
+			// reset the keyCode 
 			Snake.cache.keyCode[1] = Snake.cache.keyCode[0];
 		}
 

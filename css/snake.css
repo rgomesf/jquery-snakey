@@ -186,6 +186,10 @@ a.chrome, a.chrome:visited {
 #info li p {
 	margin:0.4em 0em;
 }
+
+li.strike {
+	text-decoration:line-through;
+}
 	
 .right {float:right}
 .error {color:red}

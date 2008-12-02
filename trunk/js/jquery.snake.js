@@ -272,7 +272,7 @@ var Snake = {
 			clearInterval(Snake.animateTimer);
 			Snake.animateTimer = 0;
 			Snake.$overlay.show();
-			$("#map-msg").html("Paused").fadeIn();
+			$("#map-msg").html("<br/>Paused").fadeIn();
 		}
 	},
 

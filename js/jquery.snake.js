@@ -4,10 +4,8 @@
  * Copyright (c) 2008 Richard Willis
  * MIT license 	: http://www.opensource.org/licenses/mit-license.php
  *
- * vi/terminal/ubuntu/firefox/firebug
  * http://jquery-snakey.googlecode.com/
  * willis.rh@gmail.com
- *
  *
  */
 

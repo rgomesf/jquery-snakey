@@ -32,16 +32,16 @@ var Snake = {
 		document.onkeydown = function(e){
 			// preventing default event behaviour causes issues with IE; 
 			// need to research further!
-			keycode = (e == null) ? event.keyCode : e.which;
+			keycode = (e === null) ? event.keyCode : e.which;
 			switch(keycode) {					
-				case 71 : !$.browser.msie && e.preventDefault(); Snake.toggleGrid(); break;
-				case 80 : !$.browser.msie && e.preventDefault(); Snake.pause(); break;
-				case 78 : !$.browser.msie && e.preventDefault(); Snake.newGame(true); break;
+				case 71 : (!$.browser.msie && e.preventDefault()); Snake.toggleGrid(); break;
+				case 80 : (!$.browser.msie && e.preventDefault()); Snake.pause(); break;
+				case 78 : (!$.browser.msie && e.preventDefault()); Snake.newGame(true); break;
 				case 37 : 					
 				case 38 : 
 				case 39 : 
 				case 40 :
-					!$.browser.msie && e.preventDefault(); 
+					(!$.browser.msie && e.preventDefault()); 
 					Snake.cache.keyCode[0] = Snake.cache.keyCode[1]; 
 					Snake.cache.keyCode[1] = keycode;					
 					break;

@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>jQuery Snakey</title>
 	<!--<base href="http://jquery-snakey.googlecode.com/svn/trunk/" />-->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/jq.css" /> 
@@ -69,14 +70,14 @@
 					<h2><a href="#bugs" class="accordian">Bugs &amp; Todo</a></h2>
 					<div id="bugs" class="hidden">
 						<ul>
-							<li><strike>TODO: Make snake grow in length</strike></li>
-							<li><strike>TODO: Introduce levels</strike></li>
-							<li><strike>TODO: Introduce wall obstacles</strike></li>
-							<li><strike>TODO: Game over when snake slithers into itself</strike></li>
-							<li><strike>BUG: new game, need to reset segment object using initial values</strike></li>
-							<li><strike>BUG: cherries cannot be positioned under snake or wall segments</strike></li>
+							<li class="strike">TODO: Make snake grow in length</li>
+							<li class="strike">TODO: Introduce levels</li>
+							<li class="strike">TODO: Introduce wall obstacles</li>
+							<li class="strike">TODO: Game over when snake slithers into itself</li>
+							<li class="strike">BUG: new game, need to reset segment object using initial values</li>
+							<li class="strike">BUG: cherries cannot be positioned under snake or wall segments</li>
 							<li>BUG: snake needs to grow from tail and not from head</li>
-							<li><strike>TODO: add multiple wall obstacles</strike></li>
+							<li class="strike">TODO: add multiple wall obstacles</li>
 							<li>TODO: Track/store high scores</li>
 						</ul>
 					</div>
@@ -112,7 +113,7 @@
 
 								</p>
 								<p>
-									<img src="img/gmail.png" />
+									<img src="img/gmail.png" alt="my email" />
 								</p>
 							</li>
 							<li>
@@ -121,6 +122,7 @@
 									You can check out the project, including all source code &amp; 
 									repository at <a href="http://jquery-snakey.googlecode.com">jquery-snakey.googlecode.com</a>
 								</p>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -128,15 +130,17 @@
 			
 			<div id="snake-col-map">
 		
+				<!--
 				<noscript class="error">
 					You need javascript enabled on your browser to be able to play this game.
 				</noscript>
+				-->
 			
 				<div id="map1">
 					<span id="map-msg">
 						<!-- click to give focus to the document -->
 						<a href="#start" id="start-game">
-							<img src="img/snake/start_game.jpg" />
+							<img src="img/snake/start_game.jpg" alt="Start Game!" />
 						</a>
 					</span>
 				</div>	

@@ -5,6 +5,8 @@
  *
  */
 
+
+
 #snake-col-map {
 	margin-left:20px;
 	width:400px;
@@ -15,6 +17,15 @@
 	width:100%;
 	margin-left:-490px;
 	float:right;
+	padding-top:4px;
+}
+#snake-col-info h2 a, #snake-col-info h2 a:visited {
+	outline:none;
+}
+#snake-col-info h2 a:hover {
+	color:red;
+}
+#snake-col-info p {
 }
 #marginLeft { 
 	margin:0px 30px 0px 490px;
@@ -88,9 +99,13 @@
 	outline:none;
 }
 .scores {
-	height:140px;
 	border:1px solid #ddd;
 	width:360px;
+}
+.scroller {
+	display:block;
+	height:9.6em;
+	overflow:auto;
 }
 .scores .col1 {
 	width:8%;
@@ -149,10 +164,9 @@
 	border-right:1px solid #999;		
 	border-bottom:1px solid #999;		
 	background:transparent url(../img/snake/browser_icons_bg.jpg) no-repeat center top;
-	opacity:0.4;
 }
 .browser-icons a:hover {
-	opacity:1;
+	border:1px solid #555;
 }
 a.explorer, a.explorer:visited {
 	background-position:center -19px;
@@ -165,6 +179,12 @@ a.opera, a.opera:visited {
 }
 a.chrome, a.chrome:visited {
 	background-position:center -80px;
+}
+#info li {
+	margin-bottom:1.1em;
+}
+#info li p {
+	margin:0.4em 0em;
 }
 	
 .right {float:right}

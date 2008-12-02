@@ -2,10 +2,9 @@
  *
  * jquery.snake.js - a nibbles clone
  * Copyright (c) 2008 Richard Willis
- * MIT license 	: http://www.opensource.org/licenses/mit-license.php
- *
- * http://jquery-snakey.googlecode.com/
- * willis.rh@gmail.com
+ * MIT license	: http://www.opensource.org/licenses/mit-license.php
+ * Project	: http://jquery-snakey.googlecode.com/
+ * Contact 	: willis.rh@gmail.com
  *
  */
 

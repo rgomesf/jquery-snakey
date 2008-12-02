@@ -6,8 +6,9 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="css/jq.css" /> 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/tabs.css" /> 
 	<link rel="stylesheet" type="text/css" media="screen" href="css/snake.css" /> 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-	<!--<script type="text/javascript" src="/js/jquery.js"></script>-->
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="js/jquery.snake.js"></script> 
 	<script type="text/javascript" src="js/common.js"></script>
 </head>
@@ -29,64 +30,98 @@
 
 				<div id="marginLeft">
 		
-				<h2>Instructions</h2>
-				<p>
-					Use the keyboard arrow keys to control the snake. Eat the specified amount of cherries to advance to the next level, without slithering
-					into yourself or a wall. The speed and length of the snake will increase with every cherry eaten. 
-					The game ends when you have used up all your lives, or when you finish all levels. Have fun!			
-				</p>
+					<h2><a href="#instructions" class="accordian open">Instructions</a></h2>
+					<div id="instructions">
+						<p>
+						Use the keyboard arrow keys to control the snake. Eat the specified amount of cherries to advance to the next level, 
+						without slithering into yourself or a wall. The speed and length of the snake will increase with every cherry eaten. 
+						The game ends when you have used up all your lives, or when you finish all levels. Have fun!			
+						</p>
+					</div>
 				
-				<h2>Shortcut Keys</h2>
-				<ul>
-					<li>P : Pause/Resume Game</li>
-					<li>N : New Game</li>
-					<li>G : Toggle Grid</li>			
-				</ul>
+					<h2><a href="#shortcut-keys" class="accordian open">Shortcut Keys</a></h2>
+					<div id="shortcut-keys">
+						<ul>
+						<li>P : Pause/Resume Game</li>
+						<li>N : New Game</li>
+						<li>G : Toggle Grid</li>			
+						</ul>
+					</div>
 				
-				<h2>High Scores <a id="scores-exp" href="javascript:;">[+]</a></h2>
-				<div id="high-scores" class="scores hidden">
-					<span class="head">
-						<span class="col1">
-							Pos.
+					<h2><a href="#high-scores" class="accordian">High Scores</a></h2>
+					<div id="high-scores" class="scores hidden">
+						(coming soon..)
+						<!--
+						<span class="head">
+							<span class="col1">
+								Pos.
+							</span>
+							<span class="col2">
+								Score
+							</span>
+							<span class="col3">
+								Name
+							</span>&nbsp;
 						</span>
-						<span class="col2">
-							Score
-						</span>
-						<span class="col3">
-							Name
-						</span>&nbsp;
-					</span>
-				</div>
+						-->
+					</div>
 				
-				<h2>Bugs &amp; Todo <a id="bugs-exp" href="javascript:;">[+]</a></h2>
-				<ul class="bugs hidden" style="margin-top:0px">
-					<li><strike>TODO: Make snake grow in length</strike></li>
-					<li><strike>TODO: Introduce levels</strike></li>
-					<li><strike>TODO: Introduce wall obstacles</strike></li>
-					<li><strike>TODO: Game over when snake slithers into itself</strike></li>
-					<li><strike>BUG: new game, need to reset segment object using initial values</strike></li>
-					<li><strike>BUG: cherries cannot be positioned under snake or wall segments</strike></li>
-					<li>BUG: snake needs to grow from tail and not from head</li>
-					<li><strike>TODO: add multiple wall obstacles</strike></li>
-					<li>TODO: Track/store high scores</li>
-				</ul>
+					<h2><a href="#bugs" class="accordian">Bugs &amp; Todo</a></h2>
+					<div id="bugs" class="hidden">
+						<ul>
+							<li><strike>TODO: Make snake grow in length</strike></li>
+							<li><strike>TODO: Introduce levels</strike></li>
+							<li><strike>TODO: Introduce wall obstacles</strike></li>
+							<li><strike>TODO: Game over when snake slithers into itself</strike></li>
+							<li><strike>BUG: new game, need to reset segment object using initial values</strike></li>
+							<li><strike>BUG: cherries cannot be positioned under snake or wall segments</strike></li>
+							<li>BUG: snake needs to grow from tail and not from head</li>
+							<li><strike>TODO: add multiple wall obstacles</strike></li>
+							<li>TODO: Track/store high scores</li>
+						</ul>
+					</div>
+	
+					<h2><a href="#source" class="accordian">Source</a></h2>
+					<div id="source" class="hidden" style="margin-top:0px">
+						<ul>
+							<li>
+								<a href="http://jquery-snakey.googlecode.com/svn/trunk/js/jquery.snake.js">jquery.snake.js</a> 
+								(Uncompressed &amp; commented)
+							</li>
+						</ul>
+					</div>
 
-				<h2>Source <a id="source-exp" href="javascript:;">[+]</a></h2>
-				<ul class="source hidden" style="margin-top:0px">
-					<li>
-						<a href="http://jquery-snakey.googlecode.com/svn/trunk/js/jquery.snake.js">jquery.snake.js</a> 
-						(Uncompressed &amp; commented)
-					</li>
-				</ul>
+					<h2><a href="#info" class="accordian">Info/Contact</a></h2>
 
-				<p>Tested on:</p>
-
-				<p class="browser-icons">
-					<a class="firefox" title="Firefox 2 &amp; 3" href="http://www.mozilla.com/firefox/">&nbsp;</a>
-					<a class="explorer" title="Explorer 6, 7 &amp; 8" href="http://www.microsoft.com/windows/products/winfamily/ie/">&nbsp;</a>
-					<a class="safari" title="Safari 3" href="http://www.apple.com/safari/">&nbsp;</a>
-					<a class="opera" title="Opera 9" href="http://www.opera.com">&nbsp;</a>
-					<a class="chrome" title="Chrome" href="http://www.google.com/chrome">&nbsp;</a>
+					<div id="info" class="hidden">
+						<ul>
+							<li>
+								<p>Tested on all major browsers:</p>
+		
+								<p class="browser-icons">
+									<a class="firefox" title="Firefox 2 &amp; 3" href="http://www.mozilla.com/firefox/">&nbsp;</a>
+									<a class="explorer" title="Explorer 6, 7 &amp; 8" href="http://www.microsoft.com/windows/products/winfamily/ie/">&nbsp;</a>
+									<a class="safari" title="Safari 3" href="http://www.apple.com/safari/">&nbsp;</a>
+									<a class="opera" title="Opera 9" href="http://www.opera.com">&nbsp;</a>
+									<a class="chrome" title="Chrome" href="http://www.google.com/chrome">&nbsp;</a>
+								</p>&nbsp;
+							</li>
+							<li>
+								<p>
+									Please send any bug reports or feedback to:
+								</p>
+								<p>
+									<img src="/img/gmail.png" />
+								</p>
+							</li>
+							<li>
+								<p>
+									This isn't a particularly large project, but it was fun making it! <br/>
+									You can check out the project, including all source code &amp; 
+									repository at <a href="http://jquery-snakey.googlecode.com">jquery-snakey.googlecode.com</a>
+								</p>
+						</ul>
+					</div>
 				</div>
 			</div>		
 			

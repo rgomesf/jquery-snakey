@@ -38,6 +38,7 @@
 	position:relative;
 	border:1px solid #aaa;
 	overflow:hidden;
+	text-align:center;
 }
 #overlay {
 	position:absolute;
@@ -54,8 +55,10 @@
 }
 #map-msg {
 	position:absolute;
-	top:42%;
+	top:38%;
+	left:0;
 	width:100%;
+	line-height:1;
 	display:block;
 	font-size:200%;
 	z-index:101;
@@ -97,6 +100,10 @@
 }
 #start-game {
 	outline:none;
+	display:block;
+	width:109px;
+	height:38px;
+	margin:20px auto 0px auto;
 }
 .scores {
 	border:1px solid #ddd;

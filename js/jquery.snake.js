@@ -10,11 +10,18 @@
 
 var Snake = {
 		
-	$map : {}, $cherry : {}, $overlay : {}, seg : {}, wallseg : {}, cache : {},		
+	$map : {}, $cherry : {}, $overlay : {}, seg : {}, wallseg : {}, cache : {},	
+	cacheimages : ['../img/snake/cherry.jpg'], 
 	animateTimer : 0, score : 0, grid : 0, level : 1, lives : 3, speed : 0, cherriesEaten : 0,
 	wall : 0, // are the outer map walls an obsticle?
 
 	setup : function() {
+
+		// pre-cache images
+		for(var i in Snake.cacheimages) {
+			var img = new Image();
+			img.src = Snake.cacheimages[i];
+		}
 
 		// build map
 		Snake.$map = $("#map1");

@@ -32,7 +32,7 @@ var Snake = {
 		document.onkeydown = function(e){
 			// preventing default event behaviour causes issues with IE; 
 			// need to research further!
-			keycode = (e === null) ? event.keyCode : e.which;
+			keycode = (e == null) ? event.keyCode : e.which;
 			switch(keycode) {					
 				case 71 : (!$.browser.msie && e.preventDefault()); Snake.toggleGrid(); break;
 				case 80 : (!$.browser.msie && e.preventDefault()); Snake.pause(); break;
@@ -90,11 +90,9 @@ var Snake = {
 		Snake.$cherry.hide();
 
 		// update map message	
-		$("#map-msg").hide().html('\
-			Level '+Snake.level+'<br/>\
-			<small>Eat <strong>'+Level[Snake.level][0].cherries+'</strong> cherries<small><br/>\
-			<small style="font-size:80%"><strong>('+Snake.lives+'</strong> '+(Snake.lives>1?'lives':'life')+' remaining)</small></small>\
-		').fadeIn(500, function(){
+		$("#map-msg").hide().html('Level '+Snake.level+' <br/>Eat <strong>'+Level[Snake.level][0].cherries+'</strong> cherries<small><br/>'+
+			'<small style="font-size:80%"><strong>('+Snake.lives+'</strong> '+(Snake.lives>1?'lives':'life')+' remaining)</small></small>'
+			).fadeIn(500, function(){
 
 			setTimeout(function(){
 	

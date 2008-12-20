@@ -64,22 +64,20 @@
 	z-index:101;
 	text-align:center;
 }
-.snake {
+.snake, .wall {
 	width:10px;
 	height:10px;
 	position:absolute;
-	background:red;
 	z-index:99;
 	display:block;
 	white-space:nowrap;
 	overflow:hidden;
 }
+.snake {
+	background:red;
+}
 .wall {
-	width:10px;
-	height:10px;
-	position:absolute;
 	background:#aaa url(../img/snake/grid_bg.gif) no-repeat;
-	z-index:99;
 }
 #cherry {
 	display:none;

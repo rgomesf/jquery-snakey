@@ -6,19 +6,21 @@
  */
 
 
-
-#snake-col-map {
+/* columns 510px | auto */
+.col-l {
 	margin-left:20px;
 	width:400px;
 	float:left;
 }
-#snake-col-info {
+.col-r {
 	position:static;
 	width:100%;
 	margin-left:-490px;
 	float:right;
 	padding-top:4px;
 }
+
+
 #snake-col-info h2 a, #snake-col-info h2 a:visited {
 	outline:none;
 }

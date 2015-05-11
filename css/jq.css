@@ -7,7 +7,7 @@ h1 { font-size: large}
 h2 { color: #800; padding-left:0; font-size: large; font-weight: normal; }
 h2 a, h2 a:visited {color:#800;text-decoration:none}
 table { border-collapse: collapse; }
-form { background: #fefefe url(../img/form_bg.gif) repeat-x 0 0; padding:0px;border: 1px solid #ddd;width:88%}
+form { background: #fefefe none repeat-x 0 0; padding:0px;border: 1px solid #ddd;width:88%}
 fieldset {border:0;margin:15px;}
 label {display:block;margin-top:2px;}
 label:hover {}
@@ -25,27 +25,22 @@ ul.links li {margin-bottom:4px}
 #main { padding: 0 }
 #main h1 { padding: 15px 10px 5px 0 }
 #banner { padding: 15px; background-color: #06b; color: white; font-size: large; border-bottom: 1px solid #ccc;
-    background: url(../img/bg.gif) repeat-x; text-align: center }
+    text-align: center }
 #banner small {font-weight:normal;font-size:75%}
 #backnav { color: #fff; font-size: x-small; position: absolute; left: 10px; text-decoration: none}
 #backnav:hover { color: #fff }
-#logo { background: url(../img/jq.png); float: right; margin-top: 10px; margin-right: 10px; display: block; width: 110px; height: 31px }
 
 #content { padding: 20px; }
 #busy { position: absolute; top: 7px; right: 7px; border: 1px ridge #ccc; background-color: #e95555; color: #eee; padding: 3px; display:none }
 #footer { padding-top: 20px; margin-top: 30px; border-top: 1px solid #ddd; color: #888 }
 
 a.external {
-    background-image: url(../img/external.png);
     background-repeat: no-repeat;
     background-position: center right;
     padding-right: 12px
 }
 
 div.step-one, div.step-two, div.step-three {background-repeat: no-repeat; background-position: center left; margin-top: 20px;height:240px; vertical-align: middle; padding: 25px 0 0 50px }
-div.step-one { background: url(../img/1.gif) no-repeat 0 15px}
-div.step-two { background: url(../img/2.gif) no-repeat  0 15px}
-div.step-three { background: url(../img/3.gif) no-repeat 0 15px}
 
 img.logo { float: right; border:none; margin: 10px 10px 0 0 }
 

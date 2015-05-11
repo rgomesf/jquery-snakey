@@ -9,6 +9,7 @@ Fork of [jquery-snakey](https://code.google.com/p/jquery-snakey/) I found on goo
 * Transform into jquery UI widget (so we can have multiple instances in the same page)
 * Add more levels
 * Make it responsive
+* Localization
 
 ## Browser support
 
